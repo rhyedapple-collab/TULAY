@@ -70,29 +70,78 @@ footer b{color:var(--ink)}
 .cards h2{font-size:24px;margin:6px 0}
 @media print{.progress,nav.top,.tip,.dict-tools,.pop{display:none}.term{border:0;background:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.spage{scroll-margin-top:16px}
+article.paged .spage{display:none}
+article.paged .spage.on{display:block}
+.pagehead{font:700 12px/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;outline:none}
+.pager{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 16px;margin:24px 0 0;display:grid;gap:12px}
+.pager[hidden]{display:none}
+.dots{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.dots i{width:28px;height:6px;border-radius:3px;background:var(--line)}
+.dots i.ok{background:var(--teal)}.dots i.now{background:var(--amber)}
+.confirm{display:flex;gap:10px;align-items:flex-start;font-size:16px;cursor:pointer}
+.confirm input{width:20px;height:20px;margin-top:3px;accent-color:var(--teal);flex:none}
+.confirm.off{opacity:.55;cursor:not-allowed}
+.pgrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.wait{font-size:14px;color:var(--muted)}
+.btn.go{background:var(--teal);color:#fff;border-color:var(--teal);font-size:16px;padding:10px 18px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+:root[data-theme=dark] .btn.go{color:#0d1a18}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.go{color:#0d1a18}}
+.kcheck{border:2px solid var(--amber);border-radius:14px;padding:18px 20px;background:var(--surface);margin-top:28px}
+.kcheck[hidden]{display:none}
+.kcheck h2{font-size:22px;margin:4px 0 8px}
+.kcheck .eyebrow{color:var(--amber)}
+.kopts{display:grid;gap:8px;margin:12px 0}
+.kopts label{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:16px}
+.kopts input{margin-top:4px;accent-color:var(--teal);flex:none}
+.kopts label.right{border-color:var(--teal);background:var(--teal-soft)}
+.kfb{border-radius:10px;padding:10px 14px;font-size:15.5px;margin-top:10px}
+.kfb.no{background:var(--amber-soft)}.kfb.yes{background:var(--teal-soft)}
+.readcard{margin-top:34px;border:2px solid var(--teal);border-radius:14px;padding:18px 20px;background:var(--surface)}
+.readcard h2{font-size:22px;margin:4px 0 8px}
+.readstat{font-size:14px;color:var(--muted);margin:8px 0 0}
+.readnote{font-size:14px;background:var(--amber-soft);border-radius:10px;padding:10px 14px;margin:0 0 20px}
+.readnote.on{background:var(--teal-soft)}
+@media print{.readcard,.readnote,.pager,.kcheck{display:none!important}article.paged .spage{display:block!important}}
 </style></head>
 <body><div class="progress" aria-hidden="true"></div><div class="wrap">
 <nav class="top"><a class="brand" href="index.html"><img class="navlogo" src="tulay-wordmark.webp" alt="TULAY" width="73" height="49"><span>READING</span></a><span><a href="index.html">All readings</a> · <a href="four-hours-on-paper.html">Week 6 reading</a> · <button class="btn" id="theme" type="button">Light / dark</button></span></nav>
 <header class="story-head"><div class="eyebrow">SEC103 – IT SECURITY AND MANAGEMENT  •  WEEK 7 READING</div><h1>The Vendor Said It Was Fine</h1><p class="sub">A short story for motivation, ahead of Third-Party Risk and Service-Level Agreements</p>
 <p class="meta">South Bridgee Learning Services, eight months after “Four Hours on Paper” · about 4 min read · 31 dictionary words</p><p class="note">All organizations, individuals, and events in this reading are fictional and created for instructional purposes.</p></header>
-<div class="tip" role="note"><span aria-hidden="true">📖</span><span><b>Tap any underlined word</b> to see what it means, how it shows up in the story, and an everyday example. The full <a href="#dictionary">Cybersecurity Dictionary</a> is at the end.</span></div>
-<article><p class="lead">Two weeks after the typhoon, the vice president made a decision that sounded, in the meeting, like the obvious lesson: “We are not running our own servers anymore.” The grading portal would move <button class="term" type="button" data-term="cloud" aria-expanded="false" aria-haspopup="dialog">to the cloud</button>. If the storage failed there, it would be someone else&#x27;s storage, someone else&#x27;s generator, someone else&#x27;s 7:02 a.m.</p>
+<div class="tip" role="note"><span aria-hidden="true">📖</span><span><b>Tap any underlined word</b> to see what it means, how it shows up in the story, and an everyday example. The story has <b>3 pages</b>: each page unlocks after enough reading time, then you confirm it. After page 3 there is one knowledge question. The full <a href="#dictionary">Cybersecurity Dictionary</a> is at the end. First time? Read <a href="how-to-read.html">How to Read a TULAY Story</a>.</span></div>
+<div class="readnote" id="readnote" role="note">Open this story from the <b>Read first</b> link in your TULAY lecture so your reading counts.</div>
+<article id="story" data-pages="3"><section class="spage" data-page="1" data-min="90" aria-label="Page 1 of 3"><p class="pagehead" tabindex="-1">Page 1 of 3</p>
+<p class="lead">Two weeks after the typhoon, the vice president made a decision that sounded, in the meeting, like the obvious lesson: “We are not running our own servers anymore.” The grading portal would move <button class="term" type="button" data-term="cloud" aria-expanded="false" aria-haspopup="dialog">to the cloud</button>. If the storage failed there, it would be someone else&#x27;s storage, someone else&#x27;s generator, someone else&#x27;s 7:02 a.m.</p>
 <p>The someone else was Kalinaw EduCloud, a learning-platform provider with a polished sales deck and a homepage that promised <button class="term" type="button" data-term="uptime" aria-expanded="false" aria-haspopup="dialog">99.9% uptime</button> and <button class="term" type="button" data-term="failover" aria-expanded="false" aria-haspopup="dialog">automatic failover</button> across two data centers. <button class="term" type="button" data-term="procurement" aria-expanded="false" aria-haspopup="dialog">Procurement took three weeks</button>. Kalinaw sent back a <button class="term" type="button" data-term="questionnaire" aria-expanded="false" aria-haspopup="dialog">security questionnaire</button> with “Yes” beside every item, and a PDF titled <button class="term" type="button" data-term="soc2" aria-expanded="false" aria-haspopup="dialog">SOC 2 Report</button> that everyone agreed was reassuring and nobody read past the cover page. The contract was Kalinaw&#x27;s <button class="term" type="button" data-term="tos" aria-expanded="false" aria-haspopup="dialog">standard terms of service</button>. Someone in the registrar&#x27;s office accepted them with a click.</p>
 <p>Lea Fernandez, for the first time in a year, slept through the night. Availability was no longer her problem. That was what they were paying for.</p>
 <p>Eight months later, on a Tuesday at 9:20 a.m., the registrar forwarded Lea an email from a stranger. He described himself as a <button class="term" type="button" data-term="researcher" aria-expanded="false" aria-haspopup="dialog">security researcher</button>. While scanning for <button class="term" type="button" data-term="misconfig" aria-expanded="false" aria-haspopup="dialog">misconfigured cloud storage</button>, he had found a publicly readable file containing the names, student numbers, and final grades of roughly four thousand South Bridgee students. He attached a screenshot of the first twenty rows. Lea recognized three of the names.</p>
 <p>She <button class="term" type="button" data-term="ticket" aria-expanded="false" aria-haspopup="dialog">opened a ticket</button> with Kalinaw at 9:41 a.m. The automated reply promised a response within three business days. She called the account manager, who was polite, concerned, and certain: Kalinaw&#x27;s platform <button class="term" type="button" data-term="breach" aria-expanded="false" aria-haspopup="dialog">had not been breached</button>. On Thursday, a support engineer finally explained what “not breached” meant. The file had not come from Kalinaw&#x27;s platform at all. It had come from an analytics and storage company Kalinaw used to process usage reports — <button class="term" type="button" data-term="sub" aria-expanded="false" aria-haspopup="dialog">a subcontractor South Bridgee had never heard of</button>, which had left a reporting bucket open to the internet.</p>
+<div class="pend" aria-hidden="true"></div></section>
+<section class="spage" data-page="2" data-min="82" aria-label="Page 2 of 3"><p class="pagehead" tabindex="-1">Page 2 of 3</p>
 <p>Kalinaw&#x27;s public notice went up on its blog eleven days after the researcher&#x27;s first email. South Bridgee learned about it the same way everyone else did.</p>
 <p>By then, the <button class="term" type="button" data-term="dpo" aria-expanded="false" aria-haspopup="dialog">Data Protection Officer</button>, Atty. Grace Villanueva, had pulled the contract and the SOC 2 report onto a conference-room screen, and was reading them out loud for the first time.</p>
 <p>The contract promised <button class="term" type="button" data-term="sla" aria-expanded="false" aria-haspopup="dialog">99.9% availability each month</button>, <button class="term" type="button" data-term="maintenance" aria-expanded="false" aria-haspopup="dialog">excluding scheduled maintenance</button>. If Kalinaw missed it, South Bridgee would receive a <button class="term" type="button" data-term="credit" aria-expanded="false" aria-haspopup="dialog">credit of five percent</button> of that month&#x27;s fee. It said nothing about how quickly Kalinaw would report a breach. It said nothing about subcontractors. It gave South Bridgee <button class="term" type="button" data-term="audit" aria-expanded="false" aria-haspopup="dialog">no right to audit anything</button>. On the question of what happened to the data if South Bridgee ever left, it said only that customer data “<button class="term" type="button" data-term="exit" aria-expanded="false" aria-haspopup="dialog">may be deleted</button>” thirty days after termination, in no particular format.</p>
 <p>The SOC 2 report was real. It was also a <button class="term" type="button" data-term="type1" aria-expanded="false" aria-haspopup="dialog">Type 1 report</button> — a description of how Kalinaw&#x27;s controls were designed on a single day, twenty months earlier, not evidence that they had worked over time. It covered the <button class="term" type="button" data-term="criteria" aria-expanded="false" aria-haspopup="dialog">Security criterion only</button>. And on page 12, a single paragraph explained that the report excluded Kalinaw&#x27;s <button class="term" type="button" data-term="carve" aria-expanded="false" aria-haspopup="dialog">subservice organizations</button>, including the one that had just exposed four thousand students. On page 41 sat a list titled <button class="term" type="button" data-term="cuec" aria-expanded="false" aria-haspopup="dialog">Complementary User Entity Controls</button>: things the customer was expected to do for the vendor&#x27;s controls to work. The first item was “Enable <button class="term" type="button" data-term="mfa" aria-expanded="false" aria-haspopup="dialog">multi-factor authentication</button> for all administrator accounts.” South Bridgee had not.</p>
 <p>The vice president, who had joined the meeting late, asked the question everyone had been thinking. “But we outsourced this. Isn&#x27;t this their problem?”</p>
+<div class="pend" aria-hidden="true"></div></section>
+<section class="spage" data-page="3" data-min="68" aria-label="Page 3 of 3"><p class="pagehead" tabindex="-1">Page 3 of 3</p>
 <p>Atty. Villanueva did not look up from the screen. “We outsourced the servers. We did not outsource the responsibility.” Under the <button class="term" type="button" data-term="dpa" aria-expanded="false" aria-haspopup="dialog">Data Privacy Act</button>, she explained, South Bridgee was still the <button class="term" type="button" data-term="pic" aria-expanded="false" aria-haspopup="dialog">personal information controller</button>. Kalinaw, and Kalinaw&#x27;s subcontractor, only <button class="term" type="button" data-term="pip" aria-expanded="false" aria-haspopup="dialog">processed the data on its behalf</button>. Student records like these were <button class="term" type="button" data-term="spi" aria-expanded="false" aria-haspopup="dialog">sensitive personal information</button>, and the duty to notify the <button class="term" type="button" data-term="npc" aria-expanded="false" aria-haspopup="dialog">National Privacy Commission</button> — within <button class="term" type="button" data-term="seventytwo" aria-expanded="false" aria-haspopup="dialog">seventy-two hours</button> of knowing about the breach — belonged to South Bridgee. That clock had started on Tuesday at 9:20 a.m. They had spent the first two days of it waiting for a vendor&#x27;s ticket queue.</p>
 <p>Lea thought about the 99.9% on Kalinaw&#x27;s homepage. It had been true. The portal had barely gone down all year. Moving to the cloud had solved the problem from the typhoon. It had also created a set of new ones that nobody had written down, because nobody had asked who would be responsible for them.</p>
 <p>That is what this module is about: reading the documents you would otherwise just sign. <button class="term" type="button" data-term="dd" aria-expanded="false" aria-haspopup="dialog">Due diligence before the contract</button>, assurance reports read past the cover page, a clear line on <button class="term" type="button" data-term="shared" aria-expanded="false" aria-haspopup="dialog">who is responsible for what</button>, and SLA clauses that say what happens on the worst day — not only on the average one.</p>
-<p>This week, you will read a vendor&#x27;s evidence the way Atty. Villanueva did — but before the incident, not after it.</p></article>
+<p>This week, you will read a vendor&#x27;s evidence the way Atty. Villanueva did — but before the incident, not after it.</p>
 <p class="closing">You can outsource the work. You cannot outsource the accountability.</p>
+<div class="pend" aria-hidden="true"></div></section></article>
+<div class="pager" id="pager" hidden></div>
+<section class="kcheck" id="kcheck" aria-labelledby="kh" hidden><div class="eyebrow">Knowledge check · after page 3</div>
+<h2 id="kh">One question before you finish</h2><p style="margin:0">On page 41 of Kalinaw&#x27;s SOC 2 report was a list of Complementary User Entity Controls, starting with “Enable multi-factor authentication for all administrator accounts.” What are Complementary User Entity Controls?</p>
+<div class="kopts" role="radiogroup" aria-labelledby="kh"><label><input type="radio" name="kq" value="0"><span>Controls that the vendor&#x27;s subcontractors perform for the vendor</span></label><label><input type="radio" name="kq" value="1"><span>Controls that the customer must perform so the vendor&#x27;s controls can work</span></label><label><input type="radio" name="kq" value="2"><span>Extra controls that are tested only in a Type 2 report</span></label><label><input type="radio" name="kq" value="3"><span>Contract clauses that give the customer the right to audit the vendor</span></label></div>
+<button class="btn go" id="kgo" type="button" disabled>Check my answer</button><div id="kfb" aria-live="polite"></div></section>
 <section class="card" aria-labelledby="rr"><div class="eyebrow">Before you begin</div><h2 id="rr">Reading Response</h2><p>Answer briefly, in your own words, before opening the Week 7 slides. Bring your answers to class — Learning Objective 1 begins where this story ends.</p>
 <ol class="qs"><li>Name three things South Bridgee could have checked before signing with Kalinaw. Which one would have revealed the subcontractor?</li><li>Kalinaw&#x27;s SOC 2 report was genuine. Why did it still give South Bridgee far less assurance than everyone assumed?</li><li>Who was responsible for notifying the National Privacy Commission, and when did the seventy-two-hour clock start? Why didn&#x27;t outsourcing change that?</li><li>Before opening the slide deck, write one clause you would add to the Kalinaw contract, and the problem in this story it would have prevented.</li></ol></section>
+<section class="readcard" id="readcard" aria-labelledby="rdh" hidden><div class="eyebrow">Finished the story?</div>
+<h2 id="rdh">Done reading</h2><div id="rdbody"></div></section>
 <section id="dictionary" aria-labelledby="dh"><div class="eyebrow">Look it up</div><h2 id="dh">Cybersecurity Dictionary</h2>
 <div class="dict-tools"><label class="sr" for="dfilter" style="position:absolute;left:-9999px">Search the dictionary</label><input id="dfilter" type="search" placeholder="Search a word, e.g. hash, SLA, RTO"></div>
 <div class="dict"><div class="entry" id="d-seventytwo"><h3>72-hour breach notification</h3><p>The requirement to notify the NPC (and affected people, when required) within 72 hours of learning about a qualifying breach.</p>
@@ -162,6 +211,7 @@ footer b{color:var(--ink)}
 <div>AI disclosure: This page, its story and its dictionary were drafted with the help of an AI assistant (Claude, by Anthropic) and reviewed, edited and approved by the instructor, who is responsible for the content.</div></footer>
 </div>
 <script type="application/json" id="terms">{"cloud": {"id": "cloud", "term": "Cloud service", "short": "Computing (servers, storage, software) rented from a provider over the internet instead of run in your own building.", "story": "After the typhoon, South Bridgee moved the grading portal to the cloud so outages would be \"someone else's storage.\"", "life": "Like renting a condo instead of building a house. Someone else fixes the elevator, but it is still your stuff inside."}, "uptime": {"id": "uptime", "term": "Uptime / availability (99.9%)", "short": "The share of time a service is working. 99.9% in a 30-day month still allows about 43 minutes of downtime.", "story": "Kalinaw promised 99.9% uptime, and it was true. Availability was never the problem in this story.", "life": "Like a jeepney route that runs 99.9% of the time. Reliable, but it says nothing about whether your bag is safe on it."}, "failover": {"id": "failover", "term": "Failover", "short": "Automatically switching to a backup system or data center when the main one fails.", "story": "Kalinaw advertised \"automatic failover across two data centers,\" which protects availability, not confidentiality.", "life": "Like a generator that turns on by itself when the power goes out."}, "procurement": {"id": "procurement", "term": "Procurement", "short": "The organization's process for choosing and buying a product or service.", "story": "Procurement took three weeks, but nobody read the evidence the vendor sent.", "life": "Like buying a used phone: the buying steps are done, but did anyone check the IMEI?"}, "questionnaire": {"id": "questionnaire", "term": "Security questionnaire", "short": "A list of security questions a customer sends a vendor. Answers are claims; they need evidence behind them.", "story": "Kalinaw answered \"Yes\" beside every item, with no proof attached.", "life": "Like a seller writing \"no issues\" on a secondhand laptop. You still test it before paying."}, "soc2": {"id": "soc2", "term": "SOC 2 report", "short": "An independent auditor's report on a service provider's controls, based on the AICPA Trust Services Criteria.", "story": "Everyone found Kalinaw's SOC 2 \"reassuring,\" but nobody read past the cover page.", "life": "Like a restaurant's sanitation inspection result. Useful only if you read what was inspected and when."}, "tos": {"id": "tos", "term": "Standard terms of service", "short": "The vendor's own default contract. It is written to protect the vendor, not the customer.", "story": "Someone accepted Kalinaw's standard terms \"with a click,\" so no South Bridgee protections were added.", "life": "Like tapping \"I agree\" on an app without reading what it can do with your data."}, "researcher": {"id": "researcher", "term": "Security researcher", "short": "A person who looks for security weaknesses and reports them so they can be fixed.", "story": "A researcher scanning for misconfigured storage found the exposed grades file and emailed South Bridgee.", "life": "Like a neighbor who notices your gate is open and texts you."}, "misconfig": {"id": "misconfig", "term": "Misconfigured cloud storage (open bucket)", "short": "Cloud storage set to \"public\" by mistake, so anyone on the internet can read the files.", "story": "The subcontractor \"left a reporting bucket open to the internet\" with 4,000 students' grades in it.", "life": "Like posting a photo album as Public instead of Only Me."}, "ticket": {"id": "ticket", "term": "Support ticket and response time", "short": "A formal request logged with a vendor's support team. The contract decides how fast they must answer.", "story": "The automatic reply promised a response \"within three business days,\" while South Bridgee's 72-hour clock kept running.", "life": "Like a courier hotline saying \"we'll get back to you in 3–5 working days\" when your package is urgent."}, "breach": {"id": "breach", "term": "Personal data breach", "short": "Personal data that was exposed, stolen, changed or lost because security failed, no matter whose system it was on.", "story": "Kalinaw said its platform \"had not been breached.\" The data was still breached, through its subcontractor.", "life": "Like saying \"our store wasn't robbed\" when your delivery rider lost the package. It is still your customer's loss."}, "sub": {"id": "sub", "term": "Subcontractor (fourth party)", "short": "A company your vendor hires to do part of the work. You may not know it exists, but it may hold your data.", "story": "An analytics company Kalinaw used, which South Bridgee \"had never heard of,\" leaked the data.", "life": "Like a delivery app passing your order to a rider you never chose."}, "dpo": {"id": "dpo", "term": "Data Protection Officer (DPO)", "short": "The person responsible for the organization's compliance with data privacy law.", "story": "Atty. Grace Villanueva, the DPO, read the contract and the SOC 2 report out loud for the first time.", "life": "Like a school's guidance office for data: the person who knows the rules and who must be informed."}, "sla": {"id": "sla", "term": "Service-Level Agreement (SLA)", "short": "The part of a contract that sets measurable service promises and what happens when they are missed.", "story": "Kalinaw's SLA covered only availability, not breach reporting, subcontractors, audits or data return.", "life": "Like a delivery app promising \"30 minutes or a voucher.\" It says nothing about a wrong or missing order."}, "maintenance": {"id": "maintenance", "term": "Scheduled maintenance exclusion", "short": "Downtime the vendor announces in advance and does not count against its availability promise.", "story": "The 99.9% promise excluded scheduled maintenance, so planned outages did not count at all.", "life": "Like a \"brownout schedule\" announcement: the power is off, but it does not count as a failure."}, "credit": {"id": "credit", "term": "Service credit", "short": "A discount the vendor gives when it misses an SLA. Usually small, and usually the only remedy.", "story": "Missing the SLA earned South Bridgee \"five percent of that month's fee,\" nothing for a data breach.", "life": "Like a 5% voucher after the store lost your order. It does not bring the order back."}, "audit": {"id": "audit", "term": "Right to audit", "short": "A contract clause that lets the customer (or an auditor) check the vendor's security controls and evidence.", "story": "The contract \"gave South Bridgee no right to audit anything.\"", "life": "Like a landlord letting you inspect the unit before renewing. No clause, no inspection."}, "exit": {"id": "exit", "term": "Data return and deletion (exit clause)", "short": "Rules for getting your data back, in a usable format, and proof of deletion when the contract ends.", "story": "Kalinaw's terms said data \"may be deleted\" 30 days after termination, \"in no particular format.\"", "life": "Like moving out of a boarding house: you want your things back in boxes, not \"we might throw them out.\""}, "type1": {"id": "type1", "term": "SOC 2 Type 1 vs Type 2", "short": "Type 1 checks whether controls were designed well on one date. Type 2 tests whether they actually worked over a period, often 6–12 months.", "story": "Kalinaw's report was a Type 1 from twenty months earlier: a snapshot of design, not proof of operation.", "life": "Type 1 is like checking that a gym has a fire extinguisher. Type 2 is checking it was inspected and working all year."}, "criteria": {"id": "criteria", "term": "Trust Services Criteria", "short": "The five areas a SOC 2 can cover: Security, Availability, Processing Integrity, Confidentiality and Privacy.", "story": "Kalinaw's report \"covered the Security criterion only.\"", "life": "Like a car inspection that checked only the brakes, not the lights or tires."}, "carve": {"id": "carve", "term": "Subservice organization (carve-out)", "short": "A vendor's own provider that the SOC 2 report leaves out. Its controls are not covered by the audit.", "story": "Page 12 said the report \"excluded Kalinaw's subservice organizations,\" including the one that leaked the data.", "life": "Like a school clearance that covers the canteen but not the outside caterer that actually cooks the food."}, "cuec": {"id": "cuec", "term": "Complementary User Entity Controls (CUECs)", "short": "Controls the customer must do itself for the vendor's controls to work, listed inside the SOC 2 report.", "story": "The first CUEC was \"Enable multi-factor authentication for all administrator accounts.\" South Bridgee had not.", "life": "Like a warranty that says \"keep away from water.\" If you don't, the protection does not hold."}, "mfa": {"id": "mfa", "term": "Multi-factor authentication (MFA)", "short": "Logging in with two or more proofs: something you know (password) plus something you have (phone code) or are.", "story": "Kalinaw expected South Bridgee to turn on MFA for admin accounts; it never did.", "life": "Like the one-time PIN your bank or e-wallet texts you after you type your password."}, "dpa": {"id": "dpa", "term": "Data Privacy Act of 2012 (RA 10173)", "short": "The Philippine law that protects personal information and sets duties for organizations that handle it.", "story": "Under the Data Privacy Act, South Bridgee stayed responsible even after outsourcing.", "life": "It is the law behind the privacy notices you tick when you register for school, banks or apps."}, "pic": {"id": "pic", "term": "Personal information controller (PIC)", "short": "The organization that decides why and how personal data is processed. It stays accountable for it.", "story": "South Bridgee \"was still the personal information controller\" of the student records.", "life": "Like a parent who hires a babysitter. The babysitter helps, but the parent is still responsible."}, "pip": {"id": "pip", "term": "Personal information processor (PIP)", "short": "A company that processes personal data on the controller's behalf and instructions, like a cloud vendor.", "story": "Kalinaw and its subcontractor \"only processed the data on its behalf.\"", "life": "Like a photocopy shop: it handles your documents, but they are still yours."}, "spi": {"id": "spi", "term": "Sensitive personal information", "short": "Personal data that needs extra protection under the law, including information about a person's education, health, and government IDs.", "story": "Students' grades are about their education, so the records counted as sensitive personal information.", "life": "Like your report card and medical records: things you would not want posted publicly."}, "npc": {"id": "npc", "term": "National Privacy Commission (NPC)", "short": "The Philippine government agency that enforces the Data Privacy Act and receives breach notifications.", "story": "The duty to notify the NPC belonged to South Bridgee, not to Kalinaw.", "life": "The office you can complain to if an app or company mishandles your personal data."}, "seventytwo": {"id": "seventytwo", "term": "72-hour breach notification", "short": "The requirement to notify the NPC (and affected people, when required) within 72 hours of learning about a qualifying breach.", "story": "The clock started Tuesday at 9:20 a.m., and two days were spent waiting in a vendor's ticket queue.", "life": "Like reporting a lost ATM card right away. Every hour you wait, the damage can grow."}, "dd": {"id": "dd", "term": "Due diligence", "short": "Checking a vendor's evidence and risks before signing, not after something goes wrong.", "story": "This week's lesson: \"due diligence before the contract.\"", "life": "Like checking reviews, the address and the business permit before paying a deposit."}, "shared": {"id": "shared", "term": "Shared responsibility", "short": "The split of security duties between customer and provider. Each side must do its part.", "story": "\"A clear line on who is responsible for what\" was missing between South Bridgee and Kalinaw.", "life": "Like a rented apartment: the owner fixes the roof, but you lock your own door."}}</script>
+<script type="application/json" id="kdata">{"answer": 1, "hint": "Look at who was supposed to enable MFA — and who had not.", "explain": "CUECs are the customer's half of the shared responsibility. The vendor's controls assume the customer does these things. South Bridgee had not enabled MFA for its administrator accounts, so part of the protection described in the report was never in place.", "options": ["Controls that the vendor's subcontractors perform for the vendor", "Controls that the customer must perform so the vendor's controls can work", "Extra controls that are tested only in a Type 2 report", "Contract clauses that give the customer the right to audit the vendor"]}</script>
 <script>
 (() => {
   const terms = JSON.parse(document.getElementById("terms").textContent);
@@ -200,5 +250,146 @@ footer b{color:var(--ink)}
   if (tb) tb.onclick = () => { const d = document.documentElement; const dark = d.dataset.theme ? d.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     d.dataset.theme = dark ? "light" : "dark"; try { localStorage.setItem("tulay-theme", d.dataset.theme); } catch(e) {} };
   try { const t = localStorage.getItem("tulay-theme"); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+})();
+</script><script>
+(() => {
+  const art = document.getElementById("story"), pager = document.getElementById("pager");
+  const kbox = document.getElementById("kcheck"), card = document.getElementById("readcard"), body = document.getElementById("rdbody"), note = document.getElementById("readnote");
+  if (!art) return;
+  const pages = [...art.querySelectorAll(".spage")], N = pages.length;
+  const CK = JSON.parse(document.getElementById("kdata").textContent);
+  const SLUG = location.pathname.split("/").pop() || "page", KEY = "tulay-read-" + SLUG, PKEY = "tulay-pages-" + SLUG;
+  const ss = { get(k){ try { return JSON.parse(sessionStorage.getItem(k) || "null"); } catch(e) { return null; } },
+               set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch(e) {} } };
+
+  // ---------------- TULAY context (only when opened from the lecture's Read first link)
+  const okBack = b => { try { const u = new URL(b);
+      if (u.pathname !== "/" || u.search || u.hash) return null;
+      if (u.protocol === "https:" && /\.trycloudflare\.com$/i.test(u.hostname)) return u.origin;
+      if (u.protocol === "http:" && /^(localhost|127\.0\.0\.1|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)$/.test(u.hostname)) return u.origin;
+    } catch(e) {} return null; };
+  const rid = () => { const a = new Uint8Array(12); crypto.getRandomValues(a); return Array.from(a, x => (x % 36).toString(36)).join(""); };
+  let st = ss.get(KEY);
+  const q = new URLSearchParams(location.search), qa = q.get("aid"), qb = okBack(q.get("back") || "");
+  let fresh = false;
+  if (qa && /^[A-Za-z0-9_-]{1,60}$/.test(qa) && qb && !(st && st.aid === qa && st.back === qb)){
+    st = {aid: qa, back: qb, rs: rid(), seconds: 0, terms: [], done: false}; fresh = true; }
+  if (st && (!okBack(st.back + "/") || !/^[A-Za-z0-9]{8,32}$/.test(st.rs))) st = null;
+  if (!st) st = {aid: null, back: null, rs: null, seconds: 0, terms: [], done: false};
+  const tracked = !!st.aid;
+
+  // ---------------- page state (a fresh TULAY session starts again at page 1)
+  let pg = fresh ? null : ss.get(PKEY);
+  if (!pg || !Array.isArray(pg.confirmed) || pg.n !== N) pg = {n: N, cur: 0, confirmed: [], secs: Array(N).fill(0), check: {tries: 0, first: null, done: false, pick: null}};
+  const terms = new Set(st.terms || []);
+  const save = () => { st.terms = [...terms]; ss.set(KEY, st); ss.set(PKEY, pg); };
+  const progress = () => Math.round(100 * pg.confirmed.length / N);
+
+  // ---------------- report to TULAY
+  const msg = ev => ({type: "tulay-reading", v: 2, aid: st.aid, rs: st.rs, event: ev, seconds: Math.round(st.seconds), scroll: progress(), terms: terms.size,
+                      pages: pg.confirmed.length, pages_total: N, check_first: pg.check.first, check_tries: pg.check.tries});
+  const toOpener = ev => { if (!tracked) return false; try { if (window.opener && !window.opener.closed){ window.opener.postMessage(msg(ev), st.back); return true; } } catch(e) {} return false; };
+
+  if (note){
+    note.className = "readnote" + (tracked ? " on" : "");
+    note.innerHTML = tracked ? `✓ <b>Opened from TULAY.</b> Your reading time, the pages you confirm, your answer to the knowledge check and the words you tap are sent to your TULAY lecture (only there).`
+      : `This page was <b>not opened from TULAY</b>, so your reading is not counted. To have it counted, open the story from the <b>Read first</b> link in your TULAY lecture.`;
+  }
+
+  // ---------------- activity + time
+  let lastAct = Date.now();
+  ["scroll", "touchstart", "keydown", "mousemove", "click", "wheel"].forEach(t => addEventListener(t, () => { lastAct = Date.now(); }, {passive: true}));
+  const active = () => document.visibilityState === "visible" && Date.now() - lastAct < 60000;
+  const reachedEnd = () => { const e = pages[pg.cur].querySelector(".pend"); return e && e.getBoundingClientRect().top < innerHeight - 20; };
+  let endSeen = pg.confirmed.includes(pg.cur);
+  document.querySelectorAll(".term").forEach(b => b.addEventListener("click", () => { terms.add(b.dataset.term); save(); }));
+
+  // ---------------- pager
+  art.classList.add("paged"); pager.hidden = false;
+  const fmt = s => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+  const need = i => +pages[i].dataset.min;
+  function showPage(i, focus){
+    pg.cur = i; endSeen = pg.confirmed.includes(i);
+    pages.forEach((p, k) => p.classList.toggle("on", k === i));
+    save(); drawPager();
+    if (focus){ const h = pages[i].querySelector(".pagehead"); art.scrollIntoView({block: "start"}); if (h) h.focus({preventScroll: true}); }
+  }
+  function drawPager(){
+    const i = pg.cur, done = pg.confirmed.includes(i), left = Math.max(0, need(i) - Math.floor(pg.secs[i]));
+    const canTick = done || (left === 0 && endSeen), last = i === N - 1;
+    pager.innerHTML = `<div class="dots" aria-label="Page ${i + 1} of ${N}">${pages.map((_, k) => `<i class="${pg.confirmed.includes(k) ? "ok" : k === i ? "now" : ""}"></i>`).join("")}<span>Page ${i + 1} of ${N}</span></div>
+      <label class="confirm ${canTick ? "" : "off"}"><input type="checkbox" id="pgok" ${done ? "checked disabled" : canTick ? "" : "disabled"}>
+        <span>I have read page ${i + 1} carefully${last ? ", to the end of the story" : ""}.</span></label>
+      <div class="pgrow"><button class="btn" id="pgback" type="button" ${i === 0 ? "disabled" : ""}>← Previous page</button>
+        <span class="wait" id="pgwait">${done ? "✓ Confirmed" : left > 0 ? `Keep reading: you can confirm in ${fmt(left)}` : !endSeen ? "Read to the end of this page to confirm it." : "Tick the box to continue."}</span>
+        <button class="btn go" id="pgnext" type="button" ${done ? "" : "disabled"}>${last ? "Go to the knowledge check →" : "Next page →"}</button></div>`;
+    const cb = document.getElementById("pgok");
+    cb.onchange = () => { if (cb.checked && !pg.confirmed.includes(i)){ pg.confirmed.push(i); save(); toOpener("progress"); drawPager(); if (last) openCheck(true); } };
+    document.getElementById("pgback").onclick = () => { if (i > 0) showPage(i - 1, true); };
+    document.getElementById("pgnext").onclick = () => { if (!pg.confirmed.includes(i)) return; if (last) openCheck(true); else showPage(i + 1, true); };
+  }
+
+  // ---------------- knowledge check (after page 3)
+  function openCheck(scroll){
+    kbox.hidden = false;
+    const radios = [...kbox.querySelectorAll('input[name="kq"]')], go = document.getElementById("kgo"), fb = document.getElementById("kfb");
+    const finish = () => {
+      radios.forEach(r => { r.disabled = true; r.closest("label").classList.toggle("right", +r.value === CK.answer); });
+      go.hidden = true;
+      fb.innerHTML = `<div class="kfb yes"><b>${pg.check.first ? "✓ Correct on your first try." : pg.check.tries > 2 ? "Here is the answer." : "✓ Correct."}</b> ${CK.explain}</div>`;
+      drawCard();
+    };
+    if (pg.check.done){ if (pg.check.pick != null){ const r = radios[pg.check.pick]; if (r) r.checked = true; } finish(); }
+    else {
+      radios.forEach(r => r.onchange = () => { go.disabled = false; });
+      go.onclick = () => {
+        const sel = radios.find(r => r.checked); if (!sel) return;
+        pg.check.tries++; pg.check.pick = +sel.value;
+        const ok = +sel.value === CK.answer;
+        if (pg.check.first === null) pg.check.first = ok;
+        if (ok || pg.check.tries >= 2){ if (!ok) pg.check.tries = 3; pg.check.done = true; save(); toOpener("progress"); finish(); }
+        else { save(); fb.innerHTML = `<div class="kfb no"><b>Not quite.</b> ${CK.hint} Try once more.</div>`; sel.checked = false; go.disabled = true; }
+      };
+    }
+    if (scroll) kbox.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+
+  // ---------------- Done reading card
+  const stat = () => `${st.seconds < 60 ? "Under 1 min" : Math.floor(st.seconds / 60) + " min"} of active reading · ${pg.confirmed.length} of ${N} pages confirmed · ${terms.size} dictionary words tapped`;
+  function drawCard(){
+    card.hidden = false;
+    if (!tracked){ body.innerHTML = `<p style="margin:0">You finished the story and the knowledge check. Because this page was not opened from TULAY, nothing was recorded. To have your reading counted, open the story from the <b>Read first</b> link in your TULAY lecture.</p>`; return; }
+    if (!pg.check.done){ body.innerHTML = `<p style="margin:0">Confirm all ${N} pages and answer the knowledge check first.</p><p class="readstat" id="rdstat">${stat()}</p>`; return; }
+    body.innerHTML = (st.done ? `<p style="margin:0"><b>✓ Sent to TULAY.</b> You can close this tab and go back to your lecture. If you keep reading, press the button again to update it.</p>`
+        : `<p style="margin:0">Press the button to record your reading in your TULAY lecture.</p>`)
+      + `<p><button class="btn go" id="rddone" type="button">${st.done ? "Update my reading in TULAY" : "Done reading — record it in TULAY"}</button></p><p class="readstat" id="rdstat">${stat()}</p>`;
+    document.getElementById("rddone").onclick = () => {
+      st.done = true; save();
+      if (toOpener("done")){ drawCard(); return; }
+      const h = new URLSearchParams({aid: st.aid, rs: st.rs, e: "done", s: Math.round(st.seconds), p: progress(), n: terms.size, pg: pg.confirmed.length, pt: N,
+                                     cf: pg.check.first === null ? "" : pg.check.first ? 1 : 0, ct: pg.check.tries});
+      location.href = st.back + "/#reading=" + h.toString();
+    };
+  }
+
+  showPage(Math.min(pg.cur, N - 1), false);
+  if (pg.confirmed.length === N) openCheck(false);
+  if (tracked || pg.check.done) drawCard();
+
+  let tick = 0;
+  setInterval(() => {
+    if (active()){ st.seconds += 1; pg.secs[pg.cur] = (pg.secs[pg.cur] || 0) + 1; }
+    if (!endSeen && reachedEnd()) endSeen = true;
+    tick++;
+    if (!pg.confirmed.includes(pg.cur)){
+      const left = Math.max(0, need(pg.cur) - Math.floor(pg.secs[pg.cur])), cb = document.getElementById("pgok");
+      if (left === 0 && endSeen && cb && cb.disabled) drawPager();
+      else { const w = document.getElementById("pgwait"); if (w) w.textContent = left > 0 ? `Keep reading: you can confirm in ${fmt(left)}` : !endSeen ? "Read to the end of this page to confirm it." : "Tick the box to continue."; }
+    }
+    if (tick % 5 === 0){ save(); const s = document.getElementById("rdstat"); if (s) s.textContent = stat(); }
+    if (tick % 30 === 0) toOpener("progress");
+  }, 1000);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden"){ save(); toOpener("progress"); } });
+  toOpener("progress");
 })();
 </script></body></html>
