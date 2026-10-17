@@ -70,30 +70,79 @@ footer b{color:var(--ink)}
 .cards h2{font-size:24px;margin:6px 0}
 @media print{.progress,nav.top,.tip,.dict-tools,.pop{display:none}.term{border:0;background:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.spage{scroll-margin-top:16px}
+article.paged .spage{display:none}
+article.paged .spage.on{display:block}
+.pagehead{font:700 12px/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;outline:none}
+.pager{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 16px;margin:24px 0 0;display:grid;gap:12px}
+.pager[hidden]{display:none}
+.dots{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.dots i{width:28px;height:6px;border-radius:3px;background:var(--line)}
+.dots i.ok{background:var(--teal)}.dots i.now{background:var(--amber)}
+.confirm{display:flex;gap:10px;align-items:flex-start;font-size:16px;cursor:pointer}
+.confirm input{width:20px;height:20px;margin-top:3px;accent-color:var(--teal);flex:none}
+.confirm.off{opacity:.55;cursor:not-allowed}
+.pgrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.wait{font-size:14px;color:var(--muted)}
+.btn.go{background:var(--teal);color:#fff;border-color:var(--teal);font-size:16px;padding:10px 18px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+:root[data-theme=dark] .btn.go{color:#0d1a18}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.go{color:#0d1a18}}
+.kcheck{border:2px solid var(--amber);border-radius:14px;padding:18px 20px;background:var(--surface);margin-top:28px}
+.kcheck[hidden]{display:none}
+.kcheck h2{font-size:22px;margin:4px 0 8px}
+.kcheck .eyebrow{color:var(--amber)}
+.kopts{display:grid;gap:8px;margin:12px 0}
+.kopts label{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:16px}
+.kopts input{margin-top:4px;accent-color:var(--teal);flex:none}
+.kopts label.right{border-color:var(--teal);background:var(--teal-soft)}
+.kfb{border-radius:10px;padding:10px 14px;font-size:15.5px;margin-top:10px}
+.kfb.no{background:var(--amber-soft)}.kfb.yes{background:var(--teal-soft)}
+.readcard{margin-top:34px;border:2px solid var(--teal);border-radius:14px;padding:18px 20px;background:var(--surface)}
+.readcard h2{font-size:22px;margin:4px 0 8px}
+.readstat{font-size:14px;color:var(--muted);margin:8px 0 0}
+.readnote{font-size:14px;background:var(--amber-soft);border-radius:10px;padding:10px 14px;margin:0 0 20px}
+.readnote.on{background:var(--teal-soft)}
+@media print{.readcard,.readnote,.pager,.kcheck{display:none!important}article.paged .spage{display:block!important}}
 </style></head>
 <body><div class="progress" aria-hidden="true"></div><div class="wrap">
 <nav class="top"><a class="brand" href="index.html"><img class="navlogo" src="tulay-wordmark.webp" alt="TULAY" width="73" height="49"><span>READING</span></a><span><a href="index.html">All readings</a> · <a href="the-vendor-said-it-was-fine.html">Week 7 reading</a> · <button class="btn" id="theme" type="button">Light / dark</button></span></nav>
 <header class="story-head"><div class="eyebrow">SEC103 – IT SECURITY AND MANAGEMENT  •  WEEK 6 READING</div><h1>Four Hours on Paper</h1><p class="sub">A short story for motivation, ahead of Disaster Recovery and Service Restoration</p>
 <p class="meta">South Bridgee Learning Services, finals week, one semester after “The Backup That Was Deleted” · about 5 min read · 23 dictionary words</p><p class="note">All organizations, individuals, and events in this reading are fictional and created for instructional purposes.</p></header>
-<div class="tip" role="note"><span aria-hidden="true">📖</span><span><b>Tap any underlined word</b> to see what it means, how it shows up in the story, and an everyday example. The full <a href="#dictionary">Cybersecurity Dictionary</a> is at the end.</span></div>
-<article><p class="lead">The number was written on the whiteboard outside Lea Fernandez&#x27;s office in green marker, circled twice: <button class="term" type="button" data-term="rto" aria-expanded="false" aria-haspopup="dialog">RTO 4 HRS</button>. It had come out of the <button class="term" type="button" data-term="bia" aria-expanded="false" aria-haspopup="dialog">business impact analysis</button> that summer, after three long meetings with the registrar, the deans, and a vice president who kept asking why the answer couldn&#x27;t simply be zero. The grading portal, everyone finally agreed, could be down for four hours before the damage turned serious, and it could <button class="term" type="button" data-term="rpo" aria-expanded="false" aria-haspopup="dialog">lose no more than one day of data</button>. They had all signed it. Lea had taped the signature page beside the number.</p>
+<div class="tip" role="note"><span aria-hidden="true">📖</span><span><b>Tap any underlined word</b> to see what it means, how it shows up in the story, and an everyday example. The story has <b>3 pages</b>: each page unlocks after enough reading time, then you confirm it. After page 3 there is one knowledge question. The full <a href="#dictionary">Cybersecurity Dictionary</a> is at the end. First time? Read <a href="how-to-read.html">How to Read a TULAY Story</a>.</span></div>
+<div class="readnote" id="readnote" role="note">Open this story from the <b>Read first</b> link in your TULAY lecture so your reading counts.</div>
+<article id="story" data-pages="3"><section class="spage" data-page="1" data-min="82" aria-label="Page 1 of 3"><p class="pagehead" tabindex="-1">Page 1 of 3</p>
+<p class="lead">The number was written on the whiteboard outside Lea Fernandez&#x27;s office in green marker, circled twice: <button class="term" type="button" data-term="rto" aria-expanded="false" aria-haspopup="dialog">RTO 4 HRS</button>. It had come out of the <button class="term" type="button" data-term="bia" aria-expanded="false" aria-haspopup="dialog">business impact analysis</button> that summer, after three long meetings with the registrar, the deans, and a vice president who kept asking why the answer couldn&#x27;t simply be zero. The grading portal, everyone finally agreed, could be down for four hours before the damage turned serious, and it could <button class="term" type="button" data-term="rpo" aria-expanded="false" aria-haspopup="dialog">lose no more than one day of data</button>. They had all signed it. Lea had taped the signature page beside the number.</p>
 <p>South Bridgee had come a long way since March. The backups were locked now — <button class="term" type="button" data-term="immutable" aria-expanded="false" aria-haspopup="dialog">immutable for thirty-five days</button>, refusing every delete command, including the ones Lea sent herself just to watch them fail. The <button class="term" type="button" data-term="integrity" aria-expanded="false" aria-haspopup="dialog">integrity checks</button> still ran every week. If the question was “do we still have our data?”, the answer had never been more certain.</p>
 <p>Nobody had asked the other question yet: how long would it take to get it back?</p>
 <p>The typhoon arrived on the Sunday night before final grades were due. Power across the city flickered for most of the evening. At 2:40 a.m., the building&#x27;s generator kicked in, kicked out, and kicked in again — and somewhere in that third surge, the <button class="term" type="button" data-term="controller" aria-expanded="false" aria-haspopup="dialog">storage controller</button> under the grading portal&#x27;s database server stopped answering. It did not catch fire. It did not make a sound. It simply stopped, and it took the live database with it.</p>
 <p>Lea got the call at 6:10 a.m. By 6:45 she had confirmed the array was not coming back, and at 7:02 a.m. — she wrote the time down, because the BIA said to — she <button class="term" type="button" data-term="declare" aria-expanded="false" aria-haspopup="dialog">declared a disaster</button>. The clock on the whiteboard had started. Four hours meant 11:02.</p>
+<div class="pend" aria-hidden="true"></div></section>
+<section class="spage" data-page="2" data-min="90" aria-label="Page 2 of 3"><p class="pagehead" tabindex="-1">Page 2 of 3</p>
 <p>She opened the <button class="term" type="button" data-term="runbook" aria-expanded="false" aria-haspopup="dialog">recovery runbook</button>. It was eleven pages long, neatly formatted, and written for a server South Bridgee had retired in January.</p>
 <p>The steps still mostly made sense, the way directions to a house still make sense after the street has been renamed. Step 4 pointed to a <button class="term" type="button" data-term="standby" aria-expanded="false" aria-haspopup="dialog">standby virtual machine</button> that no longer existed. Step 7 restored the database into a folder the new server didn&#x27;t have. Step 9 said “restore the portal configuration from backup,” and it took Lea and Paolo, the junior sysadmin, forty minutes to confirm what both of them already suspected: the portal&#x27;s <button class="term" type="button" data-term="config" aria-expanded="false" aria-haspopup="dialog">configuration file</button>, its <button class="term" type="button" data-term="tls" aria-expanded="false" aria-haspopup="dialog">TLS certificate</button>, and the connection settings for the class-roster service had never been in the <button class="term" type="button" data-term="backupset" aria-expanded="false" aria-haspopup="dialog">backup set</button> at all. They had lived on the old server, in a folder <button class="term" type="button" data-term="classify" aria-expanded="false" aria-haspopup="dialog">nobody had classified</button>, because nobody had ever thought of them as data.</p>
 <p>The database itself was safe. Its <button class="term" type="button" data-term="snapshot" aria-expanded="false" aria-haspopup="dialog">locked snapshot</button> was exactly where it should have been, and <button class="term" type="button" data-term="hash" aria-expanded="false" aria-haspopup="dialog">its hash matched</button>. But it was 312 gigabytes sitting in the <button class="term" type="button" data-term="offsite" aria-expanded="false" aria-haspopup="dialog">offsite repository</button>, and the <button class="term" type="button" data-term="bandwidth" aria-expanded="false" aria-haspopup="dialog">offsite link</button> — sized for nightly backups that <button class="term" type="button" data-term="incremental" aria-expanded="false" aria-haspopup="dialog">only sent what had changed</button> — had never been asked to carry a full restore. Paolo did the math on a sticky note at 8:15 and didn&#x27;t say the answer out loud. He just held it up: about seven hours.</p>
 <p>They improvised, the way people do with a clock running. The <button class="term" type="button" data-term="local" aria-expanded="false" aria-haspopup="dialog">local repository</button>, on a storage box at the far end of the server room, had survived the surge, so they restored from that instead — a route that was nowhere in the runbook and had never been tried on the new server. They rebuilt the configuration from memory and old screenshots. They requested a new certificate. Every fix uncovered the next missing piece.</p>
 <p>At 12:51 p.m. — nearly two hours past the line on the whiteboard — the portal&#x27;s login page loaded. Paolo actually cheered. A dean who had been standing in the doorway for most of an hour sent a message to every faculty member: The portal is back. Please resume grade submission.</p>
+<div class="pend" aria-hidden="true"></div></section>
+<section class="spage" data-page="3" data-min="84" aria-label="Page 3 of 3"><p class="pagehead" tabindex="-1">Page 3 of 3</p>
 <p>At 1:20 p.m., the first professor called. Her grades were there — but only up to Saturday night. Everything she had encoded on Sunday was gone. The 1:00 a.m. backup on Monday had started during the power flickers and never finished, and <button class="term" type="button" data-term="alert" aria-expanded="false" aria-haspopup="dialog">the alert about it</button> had gone to a mailbox nobody read at night; the newest complete snapshot was from 1:00 a.m. on Sunday, more than a full day before the failure. At 1:34 p.m., a second professor reported that he could log in but could not open any of his classes. At 2:05 p.m., a third noticed something worse: three of her students&#x27; final grades showed values she was certain she had never entered. The data was correct. The rebuilt configuration was not — it had loaded last year&#x27;s grading scale.</p>
 <p>The portal was not truly recovered until Tuesday afternoon. In the <button class="term" type="button" data-term="pir" aria-expanded="false" aria-haspopup="dialog">post-incident review</button>, Lea wrote three new lines on the whiteboard, under the green one. Planned: 4 hours. Login page: 5 hours, 49 minutes. Actually working, with correct grades: 31 hours.</p>
 <p>She looked at them for a long time. She had spent a year making sure the data would survive, and the data had survived. What had never been tested was everything between “the backup exists” and “a professor can submit a correct grade” — the runbook, the pieces that were never backed up, the time it really takes to move 312 gigabytes, and the difference between <button class="term" type="button" data-term="validation" aria-expanded="false" aria-haspopup="dialog">a service that answers and a service that is right</button>.</p>
 <p>That is what this module is about. Not whether you have a backup — you proved that in Weeks 3 and 4. Whether you can turn that backup into a working, verified service, within the time the business said it could survive, using a runbook that matches the system you actually run.</p>
-<p>This week, you will run a runbook against a clock — and write down every place it was wrong.</p></article>
+<p>This week, you will run a runbook against a clock — and write down every place it was wrong.</p>
 <p class="closing">The backup had survived. The recovery had <button class="term" type="button" data-term="rehearse" aria-expanded="false" aria-haspopup="dialog">never been rehearsed</button>.</p>
+<div class="pend" aria-hidden="true"></div></section></article>
+<div class="pager" id="pager" hidden></div>
+<section class="kcheck" id="kcheck" aria-labelledby="kh" hidden><div class="eyebrow">Knowledge check · after page 3</div>
+<h2 id="kh">One question before you finish</h2><p style="margin:0">The BIA said the grading portal could lose no more than one day of data. Yet every grade encoded on Sunday was lost, because the newest complete snapshot was from 1:00 a.m. on Sunday. Which recovery target sets that limit on how much data may be lost?</p>
+<div class="kopts" role="radiogroup" aria-labelledby="kh"><label><input type="radio" name="kq" value="0"><span>Recovery Time Objective (RTO)</span></label><label><input type="radio" name="kq" value="1"><span>Recovery Point Objective (RPO)</span></label><label><input type="radio" name="kq" value="2"><span>Immutable backup retention</span></label><label><input type="radio" name="kq" value="3"><span>Service validation</span></label></div>
+<button class="btn go" id="kgo" type="button" disabled>Check my answer</button><div id="kfb" aria-live="polite"></div></section>
 <section class="card" aria-labelledby="rr"><div class="eyebrow">Before you begin</div><h2 id="rr">Reading Response</h2><p>Answer briefly, in your own words, before opening the Week 6 slides. Bring your answers to class — Learning Objective 1 begins where this story ends.</p>
 <ol class="qs"><li>The BIA said four hours. List every reason the real recovery took longer. Which of those could South Bridgee have discovered before the typhoon?</li><li>Paolo cheered when the login page loaded. Why was that not the moment the service was recovered? What should “recovered” have meant for the grading portal?</li><li>The database hash matched, yet three students had wrong grades. What is the difference between verifying data integrity and validating a service?</li><li>Before opening the slide deck, write one thing you would add to South Bridgee&#x27;s runbook — and how you would test it.</li></ol></section>
+<section class="readcard" id="readcard" aria-labelledby="rdh" hidden><div class="eyebrow">Finished the story?</div>
+<h2 id="rdh">Done reading</h2><div id="rdbody"></div></section>
 <section id="dictionary" aria-labelledby="dh"><div class="eyebrow">Look it up</div><h2 id="dh">Cybersecurity Dictionary</h2>
 <div class="dict-tools"><label class="sr" for="dfilter" style="position:absolute;left:-9999px">Search the dictionary</label><input id="dfilter" type="search" placeholder="Search a word, e.g. hash, SLA, RTO"></div>
 <div class="dict"><div class="entry" id="d-backupset"><h3>Backup set (backup scope)</h3><p>The list of files, folders and systems a backup actually includes. Anything outside it is not protected.</p>
@@ -147,6 +196,7 @@ footer b{color:var(--ink)}
 <div>AI disclosure: This page, its story and its dictionary were drafted with the help of an AI assistant (Claude, by Anthropic) and reviewed, edited and approved by the instructor, who is responsible for the content.</div></footer>
 </div>
 <script type="application/json" id="terms">{"bia": {"id": "bia", "term": "Business Impact Analysis (BIA)", "short": "A study of how much harm the organization suffers, hour by hour, when a system is down or data is lost.", "story": "The three long meetings with the registrar, the deans and a vice president were the BIA. It produced the two numbers on Lea's whiteboard.", "life": "Like asking your family, \"If the water goes out, how many hours before it becomes a real problem?\" The answer decides how fast you must fix it."}, "rto": {"id": "rto", "term": "Recovery Time Objective (RTO)", "short": "The longest a service may stay down before the damage becomes unacceptable. It is a time limit for getting the service back.", "story": "\"RTO 4 HRS\" on the whiteboard: the grading portal had to be working again within four hours of the disaster being declared.", "life": "Like a store's rule that the cashier system must be back within 30 minutes, or customers walk out."}, "rpo": {"id": "rpo", "term": "Recovery Point Objective (RPO)", "short": "The most data, measured in time, the organization can afford to lose. It decides how often backups must run.", "story": "\"Lose no more than one day of data\" is the portal's RPO. A failed Monday backup meant Sunday's grades fell outside it.", "life": "Like a game's auto-save. If it saves every hour, the worst you lose is one hour of progress."}, "immutable": {"id": "immutable", "term": "Immutable backup", "short": "A backup that cannot be changed or deleted, by anyone, until its lock period ends.", "story": "South Bridgee's backups were \"locked now — immutable for thirty-five days,\" so even Lea's own delete commands failed.", "life": "Like writing in pen in a logbook that is sealed for 35 days. No eraser, no tearing out pages."}, "integrity": {"id": "integrity", "term": "Integrity check", "short": "A test that proves stored data has not been changed or corrupted, usually by comparing hashes.", "story": "The weekly integrity checks proved the data still existed and was intact. They did not prove it could be restored on time.", "life": "Like counting the money in an envelope before and after it is passed around."}, "controller": {"id": "controller", "term": "Storage controller / storage array", "short": "The hardware that manages a group of disks (the array). If the controller fails, the disks behind it can become unreachable.", "story": "A power surge stopped the storage controller under the database server, and the live database went with it.", "life": "Like a building's elevator controller. The floors are still there, but nobody can reach them."}, "declare": {"id": "declare", "term": "Declaring a disaster", "short": "The formal decision that an outage is a disaster, which starts the recovery plan and the RTO clock.", "story": "Lea declared a disaster at 7:02 a.m. and wrote the time down, so the four-hour limit ran to 11:02.", "life": "Like a school officially suspending classes. Once announced, everyone follows the emergency plan."}, "runbook": {"id": "runbook", "term": "Recovery runbook", "short": "Step-by-step instructions for restoring a system. It only works if it matches the system you actually run.", "story": "The eleven-page runbook was neat but written for a server retired in January, so several steps pointed to things that no longer existed.", "life": "Like a recipe written for your old kitchen. The steps make sense, but the oven it mentions is gone."}, "standby": {"id": "standby", "term": "Standby virtual machine", "short": "A spare virtual server kept ready to take over when the main one fails.", "story": "Step 4 of the runbook pointed to a standby VM that had been deleted.", "life": "Like a spare tire. Useful only if it is actually in the trunk."}, "config": {"id": "config", "term": "Configuration file", "short": "A file of settings that tells software how to run: which database, which grading scale, which addresses.", "story": "The portal's configuration was never backed up. The rebuilt one loaded last year's grading scale, so correct data showed wrong grades.", "life": "Like your phone's settings. Restore your photos onto a new phone without the settings and things still look \"off.\""}, "tls": {"id": "tls", "term": "TLS certificate", "short": "A digital ID that lets a website prove who it is and encrypt traffic (the padlock and https:// in your browser).", "story": "The portal's certificate lived only on the old server, so the team had to request a new one during the outage.", "life": "Like the padlock icon when you log in to your bank. Without it, browsers warn you the site is not safe."}, "backupset": {"id": "backupset", "term": "Backup set (backup scope)", "short": "The list of files, folders and systems a backup actually includes. Anything outside it is not protected.", "story": "The config file, certificate and roster settings were \"never in the backup set at all.\"", "life": "Like a moving checklist. If the box was never on the list, it does not arrive at the new house."}, "classify": {"id": "classify", "term": "Data classification", "short": "Labeling data by how important or sensitive it is, so it gets the right protection, including backups.", "story": "The missing files sat \"in a folder nobody had classified,\" so nobody thought to protect them.", "life": "Like sorting documents into \"keep forever,\" \"keep for a year\" and \"trash.\" Unsorted papers get lost."}, "snapshot": {"id": "snapshot", "term": "Snapshot", "short": "A saved copy of data exactly as it was at one moment in time.", "story": "The database's locked snapshot was exactly where it should be, so the data itself was safe.", "life": "Like a photo of your whiteboard notes. It shows exactly what was written at that moment."}, "hash": {"id": "hash", "term": "Hash", "short": "A short digital fingerprint calculated from a file. If even one bit changes, the hash changes.", "story": "\"Its hash matched\" proved the restored database was identical to what was backed up.", "life": "Like a fingerprint. Two different files will not have the same one."}, "offsite": {"id": "offsite", "term": "Offsite repository", "short": "A backup copy stored in a different location, so a fire, flood or typhoon at the main site cannot destroy it.", "story": "The 312 GB database was safe in the offsite repository, but pulling it back would take about seven hours.", "life": "Like keeping copies of your important IDs at a relative's house in another town."}, "bandwidth": {"id": "bandwidth", "term": "Bandwidth (the offsite link)", "short": "How much data a network connection can move per second. It decides how long a big restore takes.", "story": "The offsite link was sized for small nightly uploads, not a 312 GB restore. Paolo's math: about seven hours.", "life": "Like a narrow road. Fine for a tricycle every night, but a ten-wheeler truck crawls."}, "incremental": {"id": "incremental", "term": "Incremental backup", "short": "A backup that sends only what changed since the last backup. Fast every night, but a full restore still moves everything.", "story": "Nightly backups \"only sent what had changed,\" so nobody noticed the link could not carry a full restore.", "life": "Like uploading only today's new photos to the cloud instead of your whole gallery."}, "local": {"id": "local", "term": "Local repository", "short": "A backup copy kept on-site, close to the servers. Fastest to restore from, but exposed to the same local disasters.", "story": "The local storage box survived, so the team restored from it, a route never tried before.", "life": "Like a spare key in your drawer. Quicker than calling the locksmith, if the house is still standing."}, "alert": {"id": "alert", "term": "Monitoring alert", "short": "An automatic warning that something failed. It is only useful if a person sees it and acts.", "story": "The alert about the failed Monday backup went to a mailbox nobody read at night.", "life": "Like a smoke alarm in an empty house. It rings, but nobody hears it."}, "validation": {"id": "validation", "term": "Service validation", "short": "Testing that a restored system actually works correctly for real users, not just that it starts up.", "story": "The login page loaded at 12:51 p.m., but grades were missing and wrong. The service answered; it was not yet right.", "life": "Like checking that a repaired car can brake and steer, not just that the engine starts."}, "pir": {"id": "pir", "term": "Post-incident review", "short": "A blameless meeting after an incident to record what happened, why, and what to change.", "story": "In the review, Lea wrote the real numbers on the whiteboard: planned 4 hours, actually working 31 hours.", "life": "Like a team watching the game video after a loss to fix the plays."}, "rehearse": {"id": "rehearse", "term": "Recovery test (rehearsal)", "short": "Practicing a restore on a schedule, against the clock, to find the gaps before a real disaster does.", "story": "\"The recovery had never been rehearsed.\" A drill would have exposed the old runbook, the missing files and the slow link.", "life": "Like a fire drill. You find the blocked exit during practice, not during the fire."}}</script>
+<script type="application/json" id="kdata">{"answer": 1, "hint": "Ask yourself: is this about how long the portal was down, or about how much data was lost?", "explain": "The RPO is the most data, measured in time, the business can afford to lose. The newest complete snapshot was more than a full day before the failure, so the data lost was larger than the one-day RPO. The RTO (4 hours) is a different target: how fast the service must be working again, not how much data may be lost.", "options": ["Recovery Time Objective (RTO)", "Recovery Point Objective (RPO)", "Immutable backup retention", "Service validation"]}</script>
 <script>
 (() => {
   const terms = JSON.parse(document.getElementById("terms").textContent);
@@ -185,5 +235,146 @@ footer b{color:var(--ink)}
   if (tb) tb.onclick = () => { const d = document.documentElement; const dark = d.dataset.theme ? d.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     d.dataset.theme = dark ? "light" : "dark"; try { localStorage.setItem("tulay-theme", d.dataset.theme); } catch(e) {} };
   try { const t = localStorage.getItem("tulay-theme"); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+})();
+</script><script>
+(() => {
+  const art = document.getElementById("story"), pager = document.getElementById("pager");
+  const kbox = document.getElementById("kcheck"), card = document.getElementById("readcard"), body = document.getElementById("rdbody"), note = document.getElementById("readnote");
+  if (!art) return;
+  const pages = [...art.querySelectorAll(".spage")], N = pages.length;
+  const CK = JSON.parse(document.getElementById("kdata").textContent);
+  const SLUG = location.pathname.split("/").pop() || "page", KEY = "tulay-read-" + SLUG, PKEY = "tulay-pages-" + SLUG;
+  const ss = { get(k){ try { return JSON.parse(sessionStorage.getItem(k) || "null"); } catch(e) { return null; } },
+               set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch(e) {} } };
+
+  // ---------------- TULAY context (only when opened from the lecture's Read first link)
+  const okBack = b => { try { const u = new URL(b);
+      if (u.pathname !== "/" || u.search || u.hash) return null;
+      if (u.protocol === "https:" && /\.trycloudflare\.com$/i.test(u.hostname)) return u.origin;
+      if (u.protocol === "http:" && /^(localhost|127\.0\.0\.1|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)$/.test(u.hostname)) return u.origin;
+    } catch(e) {} return null; };
+  const rid = () => { const a = new Uint8Array(12); crypto.getRandomValues(a); return Array.from(a, x => (x % 36).toString(36)).join(""); };
+  let st = ss.get(KEY);
+  const q = new URLSearchParams(location.search), qa = q.get("aid"), qb = okBack(q.get("back") || "");
+  let fresh = false;
+  if (qa && /^[A-Za-z0-9_-]{1,60}$/.test(qa) && qb && !(st && st.aid === qa && st.back === qb)){
+    st = {aid: qa, back: qb, rs: rid(), seconds: 0, terms: [], done: false}; fresh = true; }
+  if (st && (!okBack(st.back + "/") || !/^[A-Za-z0-9]{8,32}$/.test(st.rs))) st = null;
+  if (!st) st = {aid: null, back: null, rs: null, seconds: 0, terms: [], done: false};
+  const tracked = !!st.aid;
+
+  // ---------------- page state (a fresh TULAY session starts again at page 1)
+  let pg = fresh ? null : ss.get(PKEY);
+  if (!pg || !Array.isArray(pg.confirmed) || pg.n !== N) pg = {n: N, cur: 0, confirmed: [], secs: Array(N).fill(0), check: {tries: 0, first: null, done: false, pick: null}};
+  const terms = new Set(st.terms || []);
+  const save = () => { st.terms = [...terms]; ss.set(KEY, st); ss.set(PKEY, pg); };
+  const progress = () => Math.round(100 * pg.confirmed.length / N);
+
+  // ---------------- report to TULAY
+  const msg = ev => ({type: "tulay-reading", v: 2, aid: st.aid, rs: st.rs, event: ev, seconds: Math.round(st.seconds), scroll: progress(), terms: terms.size,
+                      pages: pg.confirmed.length, pages_total: N, check_first: pg.check.first, check_tries: pg.check.tries});
+  const toOpener = ev => { if (!tracked) return false; try { if (window.opener && !window.opener.closed){ window.opener.postMessage(msg(ev), st.back); return true; } } catch(e) {} return false; };
+
+  if (note){
+    note.className = "readnote" + (tracked ? " on" : "");
+    note.innerHTML = tracked ? `✓ <b>Opened from TULAY.</b> Your reading time, the pages you confirm, your answer to the knowledge check and the words you tap are sent to your TULAY lecture (only there).`
+      : `This page was <b>not opened from TULAY</b>, so your reading is not counted. To have it counted, open the story from the <b>Read first</b> link in your TULAY lecture.`;
+  }
+
+  // ---------------- activity + time
+  let lastAct = Date.now();
+  ["scroll", "touchstart", "keydown", "mousemove", "click", "wheel"].forEach(t => addEventListener(t, () => { lastAct = Date.now(); }, {passive: true}));
+  const active = () => document.visibilityState === "visible" && Date.now() - lastAct < 60000;
+  const reachedEnd = () => { const e = pages[pg.cur].querySelector(".pend"); return e && e.getBoundingClientRect().top < innerHeight - 20; };
+  let endSeen = pg.confirmed.includes(pg.cur);
+  document.querySelectorAll(".term").forEach(b => b.addEventListener("click", () => { terms.add(b.dataset.term); save(); }));
+
+  // ---------------- pager
+  art.classList.add("paged"); pager.hidden = false;
+  const fmt = s => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+  const need = i => +pages[i].dataset.min;
+  function showPage(i, focus){
+    pg.cur = i; endSeen = pg.confirmed.includes(i);
+    pages.forEach((p, k) => p.classList.toggle("on", k === i));
+    save(); drawPager();
+    if (focus){ const h = pages[i].querySelector(".pagehead"); art.scrollIntoView({block: "start"}); if (h) h.focus({preventScroll: true}); }
+  }
+  function drawPager(){
+    const i = pg.cur, done = pg.confirmed.includes(i), left = Math.max(0, need(i) - Math.floor(pg.secs[i]));
+    const canTick = done || (left === 0 && endSeen), last = i === N - 1;
+    pager.innerHTML = `<div class="dots" aria-label="Page ${i + 1} of ${N}">${pages.map((_, k) => `<i class="${pg.confirmed.includes(k) ? "ok" : k === i ? "now" : ""}"></i>`).join("")}<span>Page ${i + 1} of ${N}</span></div>
+      <label class="confirm ${canTick ? "" : "off"}"><input type="checkbox" id="pgok" ${done ? "checked disabled" : canTick ? "" : "disabled"}>
+        <span>I have read page ${i + 1} carefully${last ? ", to the end of the story" : ""}.</span></label>
+      <div class="pgrow"><button class="btn" id="pgback" type="button" ${i === 0 ? "disabled" : ""}>← Previous page</button>
+        <span class="wait" id="pgwait">${done ? "✓ Confirmed" : left > 0 ? `Keep reading: you can confirm in ${fmt(left)}` : !endSeen ? "Read to the end of this page to confirm it." : "Tick the box to continue."}</span>
+        <button class="btn go" id="pgnext" type="button" ${done ? "" : "disabled"}>${last ? "Go to the knowledge check →" : "Next page →"}</button></div>`;
+    const cb = document.getElementById("pgok");
+    cb.onchange = () => { if (cb.checked && !pg.confirmed.includes(i)){ pg.confirmed.push(i); save(); toOpener("progress"); drawPager(); if (last) openCheck(true); } };
+    document.getElementById("pgback").onclick = () => { if (i > 0) showPage(i - 1, true); };
+    document.getElementById("pgnext").onclick = () => { if (!pg.confirmed.includes(i)) return; if (last) openCheck(true); else showPage(i + 1, true); };
+  }
+
+  // ---------------- knowledge check (after page 3)
+  function openCheck(scroll){
+    kbox.hidden = false;
+    const radios = [...kbox.querySelectorAll('input[name="kq"]')], go = document.getElementById("kgo"), fb = document.getElementById("kfb");
+    const finish = () => {
+      radios.forEach(r => { r.disabled = true; r.closest("label").classList.toggle("right", +r.value === CK.answer); });
+      go.hidden = true;
+      fb.innerHTML = `<div class="kfb yes"><b>${pg.check.first ? "✓ Correct on your first try." : pg.check.tries > 2 ? "Here is the answer." : "✓ Correct."}</b> ${CK.explain}</div>`;
+      drawCard();
+    };
+    if (pg.check.done){ if (pg.check.pick != null){ const r = radios[pg.check.pick]; if (r) r.checked = true; } finish(); }
+    else {
+      radios.forEach(r => r.onchange = () => { go.disabled = false; });
+      go.onclick = () => {
+        const sel = radios.find(r => r.checked); if (!sel) return;
+        pg.check.tries++; pg.check.pick = +sel.value;
+        const ok = +sel.value === CK.answer;
+        if (pg.check.first === null) pg.check.first = ok;
+        if (ok || pg.check.tries >= 2){ if (!ok) pg.check.tries = 3; pg.check.done = true; save(); toOpener("progress"); finish(); }
+        else { save(); fb.innerHTML = `<div class="kfb no"><b>Not quite.</b> ${CK.hint} Try once more.</div>`; sel.checked = false; go.disabled = true; }
+      };
+    }
+    if (scroll) kbox.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+
+  // ---------------- Done reading card
+  const stat = () => `${st.seconds < 60 ? "Under 1 min" : Math.floor(st.seconds / 60) + " min"} of active reading · ${pg.confirmed.length} of ${N} pages confirmed · ${terms.size} dictionary words tapped`;
+  function drawCard(){
+    card.hidden = false;
+    if (!tracked){ body.innerHTML = `<p style="margin:0">You finished the story and the knowledge check. Because this page was not opened from TULAY, nothing was recorded. To have your reading counted, open the story from the <b>Read first</b> link in your TULAY lecture.</p>`; return; }
+    if (!pg.check.done){ body.innerHTML = `<p style="margin:0">Confirm all ${N} pages and answer the knowledge check first.</p><p class="readstat" id="rdstat">${stat()}</p>`; return; }
+    body.innerHTML = (st.done ? `<p style="margin:0"><b>✓ Sent to TULAY.</b> You can close this tab and go back to your lecture. If you keep reading, press the button again to update it.</p>`
+        : `<p style="margin:0">Press the button to record your reading in your TULAY lecture.</p>`)
+      + `<p><button class="btn go" id="rddone" type="button">${st.done ? "Update my reading in TULAY" : "Done reading — record it in TULAY"}</button></p><p class="readstat" id="rdstat">${stat()}</p>`;
+    document.getElementById("rddone").onclick = () => {
+      st.done = true; save();
+      if (toOpener("done")){ drawCard(); return; }
+      const h = new URLSearchParams({aid: st.aid, rs: st.rs, e: "done", s: Math.round(st.seconds), p: progress(), n: terms.size, pg: pg.confirmed.length, pt: N,
+                                     cf: pg.check.first === null ? "" : pg.check.first ? 1 : 0, ct: pg.check.tries});
+      location.href = st.back + "/#reading=" + h.toString();
+    };
+  }
+
+  showPage(Math.min(pg.cur, N - 1), false);
+  if (pg.confirmed.length === N) openCheck(false);
+  if (tracked || pg.check.done) drawCard();
+
+  let tick = 0;
+  setInterval(() => {
+    if (active()){ st.seconds += 1; pg.secs[pg.cur] = (pg.secs[pg.cur] || 0) + 1; }
+    if (!endSeen && reachedEnd()) endSeen = true;
+    tick++;
+    if (!pg.confirmed.includes(pg.cur)){
+      const left = Math.max(0, need(pg.cur) - Math.floor(pg.secs[pg.cur])), cb = document.getElementById("pgok");
+      if (left === 0 && endSeen && cb && cb.disabled) drawPager();
+      else { const w = document.getElementById("pgwait"); if (w) w.textContent = left > 0 ? `Keep reading: you can confirm in ${fmt(left)}` : !endSeen ? "Read to the end of this page to confirm it." : "Tick the box to continue."; }
+    }
+    if (tick % 5 === 0){ save(); const s = document.getElementById("rdstat"); if (s) s.textContent = stat(); }
+    if (tick % 30 === 0) toOpener("progress");
+  }, 1000);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden"){ save(); toOpener("progress"); } });
+  toOpener("progress");
 })();
 </script></body></html>
