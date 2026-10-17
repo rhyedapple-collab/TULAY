@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Read · TULAY Reading</title>
+<meta name="description" content="How to read a TULAY story and make the most of the reading activity.">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--bg:#f6f4ee;--surface:#fffdf8;--ink:#1f2630;--muted:#5d6672;--line:#ddd6c6;--navy:#17335a;--teal:#0b7a6e;
+--teal-soft:#dcefea;--amber:#8a5a00;--amber-soft:#fbf0d4;--focus:#1a73e8;--shadow:0 10px 30px rgba(20,30,50,.18);
+--display:"Cambria",Georgia,"Times New Roman",serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#11161e;--surface:#182130;--ink:#e6eaf0;--muted:#9aa6b6;
+--line:#2d3a4f;--navy:#a9c7f0;--teal:#55cbb9;--teal-soft:#173430;--amber:#f0c060;--amber-soft:#3a2e12;--shadow:0 10px 30px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme=dark]{--bg:#11161e;--surface:#182130;--ink:#e6eaf0;--muted:#9aa6b6;--line:#2d3a4f;--navy:#a9c7f0;--teal:#55cbb9;
+--teal-soft:#173430;--amber:#f0c060;--amber-soft:#3a2e12;--shadow:0 10px 30px rgba(0,0,0,.5);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+a{color:var(--navy)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 var(--body);padding:0 16px 56px}
+.wrap{max-width:700px;margin:0 auto}
+.progress{position:fixed;top:0;left:0;height:4px;background:var(--teal);width:0;z-index:20}
+nav.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;font-size:14px;flex-wrap:wrap}
+nav.top a{color:var(--navy);font-weight:600;text-decoration:none}
+.brand{font:700 14px var(--body);letter-spacing:.08em;color:var(--teal)}
+header.story-head{padding:28px 0 8px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700}
+h1{font:700 clamp(32px,7vw,46px)/1.12 var(--display);color:var(--navy);margin:10px 0 8px;text-wrap:balance}
+h2{font:700 26px/1.25 var(--display);color:var(--navy);margin:0 0 12px}
+.sub{font-size:18px;color:var(--muted);margin:0 0 10px}
+.meta{font-size:14px;color:var(--muted);margin:0}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin:10px 0 0}
+.tip{display:flex;gap:10px;align-items:flex-start;background:var(--teal-soft);border-radius:10px;padding:12px 14px;font-size:15px;margin:0 0 26px}
+.tip b{color:var(--teal)}
+article p{margin:0 0 1.15em;font-family:var(--display);font-size:19px;line-height:1.75}
+article p.lead::first-letter{float:left;font:700 3.4em/0.8 var(--display);color:var(--navy);padding:6px 8px 0 0}
+.term{all:unset;cursor:pointer;color:inherit;border-bottom:2px dotted var(--teal);background:linear-gradient(transparent 62%,var(--teal-soft) 0);border-radius:2px}
+.term:hover,.term[aria-expanded=true]{background:var(--teal-soft)}
+.term:focus-visible,:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.closing{font:italic 700 21px/1.5 var(--display);color:var(--navy);border-left:4px solid var(--teal);padding:4px 0 4px 16px;margin:28px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+section{margin-top:34px}
+ol.qs{padding-left:22px;margin:0;display:grid;gap:12px}
+.pop{position:absolute;z-index:30;width:min(360px,calc(100vw - 32px));background:var(--surface);color:var(--ink);border:1px solid var(--line);
+border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;font:15px/1.55 var(--body)}
+.pop h3{font:700 17px/1.3 var(--display);color:var(--navy);margin:0 26px 6px 0}
+.pop p{margin:0 0 8px}.pop .lab{font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.pop .lab.s{color:var(--amber)}.pop .lab.l{color:var(--teal)}
+.pop .x{all:unset;position:absolute;top:8px;right:10px;cursor:pointer;font-size:22px;line-height:1;color:var(--muted);padding:2px 6px}
+.pop a{color:var(--navy);font-size:14px;font-weight:600}
+.dict-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.dict-tools input{flex:1 1 220px;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.dict{display:grid;gap:12px}
+.entry{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;scroll-margin-top:16px}
+.entry:target{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.entry h3{font:700 18px/1.3 var(--display);color:var(--navy);margin:0 0 6px}
+.entry p{margin:0 0 6px;font-size:15.5px}
+.entry .row{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:15px}
+.entry .row b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.entry .row b.s{color:var(--amber)}.entry .row b.l{color:var(--teal)}
+.entry .jump{font-size:13px;color:var(--navy);font-weight:600}
+@media (max-width:520px){.entry .row{grid-template-columns:1fr}}
+footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:13.5px;color:var(--muted);display:grid;gap:8px}
+footer b{color:var(--ink)}
+.brand{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.navlogo{height:40px;width:auto;background:#fff;border-radius:8px;padding:2px 5px}
+.logo-hero{background:#fff;border-radius:16px;padding:10px;text-align:center;margin-bottom:16px}
+.logo-hero img{width:min(380px,90%);height:auto}
+.footlogo{height:32px;width:auto;background:#fff;border-radius:6px;padding:2px 5px}
+.btn{all:unset;cursor:pointer;font:600 14px var(--body);border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:var(--surface);color:var(--ink)}
+.cards{display:grid;gap:16px;margin-top:20px}
+.cards a{display:block;text-decoration:none;color:inherit}
+.cards a:hover .card{border-color:var(--teal)}
+.cards h2{font-size:24px;margin:6px 0}
+@media print{.progress,nav.top,.tip,.dict-tools,.pop{display:none}.term{border:0;background:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:s}
+.steps>li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px 62px;position:relative;counter-increment:s}
+.steps>li::before{content:counter(s);position:absolute;left:16px;top:15px;width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;font:700 16px/32px var(--body);text-align:center}
+:root[data-theme=dark] .steps>li::before{color:#0d1a18}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .steps>li::before{color:#0d1a18}}
+.steps h3{font:700 19px/1.3 var(--display);color:var(--navy);margin:0 0 2px}
+.steps .time{font-size:13px;font-weight:700;color:var(--amber);letter-spacing:.04em}
+.steps ul,.card ul{margin:8px 0 0;padding-left:20px}.steps li li,.card li{margin:3px 0}
+.lede{font-size:18px;color:var(--muted)}
+.two{display:grid;gap:14px}@media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
+.card h3{font:700 19px/1.3 var(--display);color:var(--navy);margin:4px 0 6px}
+.cer{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:10px 0 0;font-size:16px}
+.cer b{color:var(--teal)}
+.sample{border-left:4px solid var(--teal);background:var(--teal-soft);border-radius:0 10px 10px 0;padding:10px 14px;margin:12px 0 0;font-size:16px}
+.warn{background:var(--amber-soft);border-radius:12px;padding:14px 16px}
+.warn h3{color:var(--amber)}
+.check{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:16px}
+.check input{width:20px;height:20px;margin-top:4px;accent-color:var(--teal);flex:none}
+.small{font-size:14px;color:var(--muted)}
+.go{display:inline-block;margin-top:10px;font-weight:700;text-decoration:none;border:1px solid var(--teal);color:var(--teal);border-radius:8px;padding:6px 12px}
+@media print{.check input{display:none}}
+</style></head>
+<body><div class="progress" aria-hidden="true"></div><div class="wrap">
+<nav class="top"><a class="brand" href="index.html"><img class="navlogo" src="tulay-wordmark.webp" alt="TULAY" width="73" height="49"><span>READING</span></a><span><a href="index.html">All readings</a> · <button class="btn" id="theme" type="button">Light / dark</button></span></nav>
+
+<header class="story-head"><div class="eyebrow">SEC103 · Start here · South Bridgee Learning Services</div>
+<h1>How to Read a TULAY Story</h1>
+<p class="lede">Each week starts with a short story about South Bridgee. The story is not a break from the lesson — it <i>is</i> the first part of it. The lecture, the challenge questions and the quiz all build on what happens in the story. Here is how to get the most out of it in about 25 minutes.</p>
+<p class="meta">Before each TULAY lecture · works on a phone, tablet or computer</p></header>
+
+<section aria-labelledby="h-routine" style="margin-top:0"><div class="eyebrow">The routine</div><h2 id="h-routine">Five steps, about 25 minutes</h2>
+<ol class="steps">
+<li><h3>Preview the questions first</h3><div class="time">2 minutes</div>
+<ul><li><b>Open the story from the Read first link in your TULAY lecture.</b> Only then is your reading counted. The page will say <i>“Opened from TULAY”</i>.</li>
+<li>Read the title, the subtitle and the week. They tell you the lecture topic.</li>
+<li>Scroll to the bottom and read the four <b>Reading Response</b> questions <b>before</b> you read the story. Now you know what to watch for.</li>
+<li>Glance at the dictionary list. Words you have never seen are the ones to tap later.</li></ul></li>
+
+<li><h3>Read the whole story once</h3><div class="time">6–8 minutes</div>
+<ul><li>Read from start to finish without rushing. Follow what happens and why.</li>
+<li>The story is split into <b>3 pages</b>. Each page asks for enough reading time and for you to reach its end. Then tick <b>“I have read page … carefully”</b> and press <b>Next page</b>. You can always go back to an earlier page.</li>
+<li>After page 3, answer <b>one knowledge question</b>. If your first answer is wrong, you get a hint and one more try.</li>
+<li><b>Tap an underlined word</b> when you cannot explain it in your own words. Each one shows three things:
+  <ul><li><b>Meaning</b> — the short definition,</li><li><b>In the story</b> — how it matters to South Bridgee,</li><li><b>Think of it like</b> — an everyday example you already know.</li></ul></li>
+<li>Do not stop for every word. If you can guess the meaning from the sentence, keep going and check it later.</li>
+<li>Watch the <b>numbers, times and dates</b>. In these stories, the clock is part of the problem.</li>
+<li>At the end, press <b>Done reading — record it in TULAY</b>. It sends your reading time, the pages you confirmed, your answer to the knowledge question and the words you tapped to your lecture.</li></ul></li>
+
+<li><h3>Skim again and mark the evidence</h3><div class="time">5 minutes</div>
+<ul><li>Take one question at a time. Scroll back and find the sentences that answer it.</li>
+<li>Write a short note on paper or in your notes app: the question number, and the detail that answers it (a time, a person, a decision).</li>
+<li>Use the <b>Cybersecurity Dictionary</b> search box at the end to look up a word quickly, for example <i>RTO</i>, <i>hash</i> or <i>SLA</i>.</li></ul></li>
+
+<li><h3>Answer the Reading Response</h3><div class="time">8–10 minutes</div>
+<ul><li>Answer all four questions <b>in your own words</b>, 2–4 sentences each.</li>
+<li>Use the <b>Claim – Evidence – Reason</b> pattern below. Include at least one dictionary word in each answer, used correctly.</li>
+<li>Bring your answers to class, or submit them the way your teacher tells you.</li></ul></li>
+
+<li><h3>Go to the TULAY lecture</h3><div class="time">right after reading</div>
+<ul><li>Open the lecture for the same week and do <b>Learning mode</b>. Its first part starts where the story ends.</li>
+<li>Try each challenge question <b>before</b> you press <b>Reveal answer</b>. A wrong first try teaches you more than a revealed answer.</li>
+<li>Take the <b>Quiz mode</b> only when you can explain the story's main problem without looking.</li></ul></li>
+</ol></section>
+
+<section aria-labelledby="h-watch"><div class="eyebrow">What to watch for</div><h2 id="h-watch">Reading guides for this term</h2>
+<p class="small">These are things to notice, not answers. Use them during Step 2.</p>
+<div class="two">
+<div class="card"><div class="eyebrow">Week 6 · Disaster Recovery</div><h3>Four Hours on Paper</h3>
+<ul><li><b>Follow the clock.</b> Write down the number on the whiteboard, then every time stamp in the story. Where did the minutes go?</li>
+<li><b>List the surprises.</b> Each time the team found something the plan did not cover, note it.</li>
+<li><b>“Loaded” vs “recovered.”</b> Ask yourself when the service was really back for the people who use it.</li>
+<li><b>Key words:</b> BIA, RTO, RPO, recovery runbook, hash, service validation.</li></ul>
+<a class="go" href="four-hours-on-paper.html">Open the Week 6 story →</a></div>
+<div class="card"><div class="eyebrow">Week 7 · Third-Party Risk</div><h3>The Vendor Said It Was Fine</h3>
+<ul><li><b>Before vs after signing.</b> Note what South Bridgee checked before choosing the vendor, and what it learned only later.</li>
+<li><b>Promises vs proof.</b> For every promise (uptime, the report, the contract), ask: what does it actually cover?</li>
+<li><b>Follow the clock again.</b> Track the dates from the first warning email to the public notice.</li>
+<li><b>Key words:</b> SLA, SOC 2 Type 1 vs Type 2, subcontractor, DPO, 72-hour breach notification.</li></ul>
+<a class="go" href="the-vendor-said-it-was-fine.html">Open the Week 7 story →</a></div>
+</div></section>
+
+<section aria-labelledby="h-cer"><div class="eyebrow">Writing your answers</div><h2 id="h-cer">Claim – Evidence – Reason</h2>
+<div class="card"><p style="margin:0">A strong answer has three parts. Keep each part to one sentence.</p>
+<div class="cer"><b>Claim</b><span>Your answer to the question, in one sentence.</span>
+<b>Evidence</b><span>A specific detail from the story: a time, a number, a decision or a quote.</span>
+<b>Reason</b><span>Why the evidence proves your claim, using a dictionary word correctly.</span></div>
+<div class="sample"><b>Example (a different situation, so it does not give away the story):</b><br>
+<i>Question: Was the family's photo backup really safe?</i><br>
+<b>Claim:</b> No, the backup was not safe. <b>Evidence:</b> The external drive was kept in the same room as the laptop, and both were damaged when the room flooded. <b>Reason:</b> A backup that is not stored <b>offsite</b> can be lost in the same disaster as the original, so it does not protect against that disaster.</div>
+<p class="small" style="margin:10px 0 0">Weak answer: “No, because it was not safe.” — it has a claim, but no evidence and no reason.</p></div></section>
+
+<section aria-labelledby="h-tools"><div class="eyebrow">Use the page well</div><h2 id="h-tools">Reading tools and tips</h2>
+<div class="two">
+<div class="card"><h3>On the page</h3><ul>
+<li><b>Underlined words</b> — tap or click to open; tap × or anywhere outside to close.</li>
+<li><b>Open in the dictionary ↓</b> — jumps to the full entry at the end.</li>
+<li><b>Search box</b> — in the dictionary; type part of a word.</li>
+<li><b>Light / dark</b> — top right; dark is easier at night.</li>
+<li><b>Green bar</b> at the top — shows how far you have read.</li>
+<li><b>Done reading</b> — after the Reading Response; records your reading in TULAY.</li></ul></div>
+<div class="card"><h3>On a phone</h3><ul>
+<li>Open the link in <b>Safari or Chrome</b>, not inside Messenger or Facebook.</li>
+<li>Make the text bigger: Safari <b>aA</b> button, or Chrome menu ⋮ › <b>Settings › Accessibility</b>. On a computer, press <b>Ctrl</b> and <b>+</b> (Mac: <b>⌘</b> and <b>+</b>).</li>
+<li>Once the page opens, it keeps working even if your data drops. Keep the tab open.</li>
+<li>Turn on <b>Do Not Disturb</b> for 25 minutes. Notifications break your focus.</li></ul></div>
+</div></section>
+
+<section aria-labelledby="h-avoid"><div class="warn"><h3 id="h-avoid" style="font:700 19px/1.3 var(--display);margin:0 0 6px">Avoid these common mistakes</h3><ul style="margin:0;padding-left:20px">
+<li><b>Hunting for answers without reading the story.</b> The questions ask <i>why</i> things happened. You need the whole story to answer them.</li>
+<li><b>Copying the dictionary definition as your answer.</b> Use the word inside your own sentence instead.</li>
+<li><b>Pasting the questions into an AI chatbot.</b> The lecture, the quiz and the recitation ask you to explain the story in your own words and your own voice. Practice that here.</li>
+<li><b>Reading only the night before the quiz.</b> Read before the lecture so the lecture makes sense.</li></ul></div></section>
+
+<section aria-labelledby="h-check"><div class="eyebrow">Track yourself</div><h2 id="h-check">My reading checklist</h2>
+<p class="small">Your ticks are saved only in this browser on this device. Nothing is sent to your teacher.</p>
+<div class="two">
+<div class="card"><div class="eyebrow">Week 6</div><h3>Four Hours on Paper</h3><ul class="check"><li><label><input type="checkbox" id="w6c0"><span>I read the four Reading Response questions <b>before</b> the story.</span></label></li><li><label><input type="checkbox" id="w6c1"><span>I opened the story from the Read first link in TULAY.</span></label></li><li><label><input type="checkbox" id="w6c2"><span>I read and confirmed all 3 pages and answered the knowledge question.</span></label></li><li><label><input type="checkbox" id="w6c3"><span>I pressed Done reading.</span></label></li><li><label><input type="checkbox" id="w6c4"><span>I tapped every underlined word I could not explain to a classmate.</span></label></li><li><label><input type="checkbox" id="w6c5"><span>I skimmed the story a second time and marked the evidence for each question.</span></label></li><li><label><input type="checkbox" id="w6c6"><span>I answered all four questions in my own words (Claim, Evidence, Reason).</span></label></li><li><label><input type="checkbox" id="w6c7"><span>I opened the TULAY lecture and finished Learning mode.</span></label></li></ul></div>
+<div class="card"><div class="eyebrow">Week 7</div><h3>The Vendor Said It Was Fine</h3><ul class="check"><li><label><input type="checkbox" id="w7c0"><span>I read the four Reading Response questions <b>before</b> the story.</span></label></li><li><label><input type="checkbox" id="w7c1"><span>I opened the story from the Read first link in TULAY.</span></label></li><li><label><input type="checkbox" id="w7c2"><span>I read and confirmed all 3 pages and answered the knowledge question.</span></label></li><li><label><input type="checkbox" id="w7c3"><span>I pressed Done reading.</span></label></li><li><label><input type="checkbox" id="w7c4"><span>I tapped every underlined word I could not explain to a classmate.</span></label></li><li><label><input type="checkbox" id="w7c5"><span>I skimmed the story a second time and marked the evidence for each question.</span></label></li><li><label><input type="checkbox" id="w7c6"><span>I answered all four questions in my own words (Claim, Evidence, Reason).</span></label></li><li><label><input type="checkbox" id="w7c7"><span>I opened the TULAY lecture and finished Learning mode.</span></label></li></ul></div>
+</div>
+<p><button class="btn" id="resetchk" type="button">Clear my ticks</button></p></section>
+
+<footer><img class="footlogo" src="tulay-wordmark.webp" alt="TULAY" width="48" height="32"><div><b>TULAY</b> · Teaching Using Lectures, Assessment, and Your recitation · SEC103 IT Security and Management</div>
+<div>Created by <b>MSDMANLAPAZ 2026</b>. All organizations, individuals and events in the readings are fictional and created for instructional purposes.</div>
+<div>AI disclosure: This page, its story and its dictionary were drafted with the help of an AI assistant (Claude, by Anthropic) and reviewed, edited and approved by the instructor, who is responsible for the content.</div></footer>
+</div>
+<script type="application/json" id="terms">{}</script><script>
+(() => {
+  const terms = JSON.parse(document.getElementById("terms").textContent);
+  let pop = null, owner = null;
+  const close = () => { if (pop) { pop.remove(); pop = null; } if (owner) { owner.setAttribute("aria-expanded","false"); owner.focus({preventScroll:true}); owner = null; } };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  function open(btn){
+    const t = terms[btn.dataset.term]; if (!t) return;
+    if (owner === btn) return close();
+    close(); owner = btn; btn.setAttribute("aria-expanded","true");
+    pop = document.createElement("div"); pop.className = "pop"; pop.setAttribute("role","dialog"); pop.setAttribute("aria-label", t.term);
+    pop.innerHTML = `<button class="x" aria-label="Close">×</button><h3>${esc(t.term)}</h3><p>${esc(t.short)}</p>
+      <p><span class="lab s">In the story</span><br>${esc(t.story)}</p><p><span class="lab l">Think of it like</span><br>${esc(t.life)}</p>
+      <a href="#d-${t.id}">Open in the dictionary ↓</a>`;
+    document.body.appendChild(pop);
+    const r = btn.getBoundingClientRect(), w = pop.offsetWidth, vw = document.documentElement.clientWidth;
+    let left = Math.min(Math.max(16, r.left + window.scrollX), window.scrollX + vw - w - 16);
+    let top = r.bottom + window.scrollY + 8;
+    if (r.bottom + pop.offsetHeight + 16 > window.innerHeight && r.top > pop.offsetHeight + 16) top = r.top + window.scrollY - pop.offsetHeight - 8;
+    pop.style.left = left + "px"; pop.style.top = top + "px";
+    pop.querySelector(".x").onclick = close;
+    pop.querySelector("a").onclick = () => { const o = owner; close(); };
+    pop.querySelector(".x").focus({preventScroll:true});
+  }
+  document.querySelectorAll(".term").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); open(b); }));
+  document.addEventListener("click", e => { if (pop && !pop.contains(e.target)) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  window.addEventListener("resize", close);
+  const f = document.getElementById("dfilter");
+  if (f) f.addEventListener("input", () => { const q = f.value.trim().toLowerCase();
+    document.querySelectorAll(".entry").forEach(el => el.hidden = q && !el.textContent.toLowerCase().includes(q)); });
+  const bar = document.querySelector(".progress");
+  const onScroll = () => { const h = document.documentElement; const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight); bar.style.width = (p*100) + "%"; };
+  document.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  const tb = document.getElementById("theme");
+  if (tb) tb.onclick = () => { const d = document.documentElement; const dark = d.dataset.theme ? d.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    d.dataset.theme = dark ? "light" : "dark"; try { localStorage.setItem("tulay-theme", d.dataset.theme); } catch(e) {} };
+  try { const t = localStorage.getItem("tulay-theme"); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+})();
+</script><script>
+(() => {
+  const KEY = "tulay-howto-checks";
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e) {}
+  document.querySelectorAll(".check input").forEach(cb => {
+    cb.checked = !!saved[cb.id];
+    cb.addEventListener("change", () => { saved[cb.id] = cb.checked; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {} });
+  });
+  const r = document.getElementById("resetchk");
+  if (r) r.onclick = () => { saved = {}; try { localStorage.removeItem(KEY); } catch(e) {} document.querySelectorAll(".check input").forEach(c => c.checked = false); };
+})();
+</script></body></html>
